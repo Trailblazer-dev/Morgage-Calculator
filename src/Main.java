@@ -9,14 +9,37 @@ public class Main {
         double Mortgage,principle,rate;
         int year;
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter your principle: ");
-        principle = scanner.nextDouble();
+        while (true) {
+            System.out.print("Enter your principle: ");
+            principle = scanner.nextDouble();
+            if(principle>=1000 && principle<=10000000){
+                break;
+            }
+            else{
+                System.out.println("Enter a value between 1k and 1M");
+            }
+        }
         scanner.nextLine();
-        System.out.print("Annual interest: ");
-        rate = scanner.nextDouble();
+        while (true) {
+            System.out.print("Annual interest: ");
+            rate = scanner.nextDouble();
+            if(rate >=1 && rate <=30){
+                break;
+            }
+            else
+                System.out.println("Enter a value between 1 and 30");
+        }
         scanner.nextLine();
-        System.out.print("Number of years: ");
-        year = scanner.nextInt();
+        while(true) {
+            System.out.print("Number of years: ");
+            year = scanner.nextInt();
+            if(year>=1 && year <=30){
+                break;
+            }
+            else {
+                System.out.println("Enter a value between 1 and 30");
+            }
+        }
         int months = year*12;
 
         double annualRate= (rate/100)/12;
